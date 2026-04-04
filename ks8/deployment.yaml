@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: online-exam
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: online-exam
+  template:
+    metadata:
+      labels:
+        app: online-exam
+    spec:
+      containers:
+      - name: online-exam
+        image: harshini2105/online-exam-openshift:latest
+        ports:
+        - containerPort: 3000
