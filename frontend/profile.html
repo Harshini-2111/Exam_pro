@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile - Pro Exam Portal</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+    <div class="nav-header">
+        <button onclick="window.location.href='dashboard.html'" class="btn-secondary" style="background:#444; color:white; padding:10px 20px; border-radius:8px; border:none; cursor:pointer;">← Back to Dashboard</button>
+        <h1>My Profile</h1>
+        <div style="width: 100px;"></div> </div>
+
+    <div id="profile-container" style="width: 100%; max-width: 800px;">
+        <div class="glass-card" style="text-align: center; margin-bottom: 25px;">
+            <img id="profile-avatar" src="" style="width: 120px; height: 120px; border-radius: 50%; border: 4px solid #00d2ff; margin-bottom: 15px;">
+            <h2 id="profile-name" style="color: #00d2ff; font-size: 2rem;">Loading...</h2>
+            <p id="profile-email" style="opacity: 0.7; margin-bottom: 20px;">email@example.com</p>
+            
+            <div style="display: flex; justify-content: center; gap: 30px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px;">
+                <div>
+                    <h3 id="stat-subjects" style="color: #00d2ff;">0</h3>
+                    <p style="font-size: 0.8rem; opacity: 0.8;">Subjects</p>
+                </div>
+                <div>
+                    <h3 id="stat-passed" style="color: #28a745;">0</h3>
+                    <p style="font-size: 0.8rem; opacity: 0.8;">Levels Passed</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="glass-card">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+        <h3>Account Management</h3>
+        <button onclick="toggleEditModal()" class="btn-primary" style="padding: 8px 15px; font-size: 0.8rem;">Edit Profile</button>
+    </div>
+    
+    <div id="subject-stats-list"></div>
+
+    <div style="margin-top: 30px; display: flex; gap: 15px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px;">
+        <button onclick="logout()" class="btn-secondary" style="flex: 1; background: #444;">Logout</button>
+        <button onclick="deleteAccount()" class="btn-danger" style="flex: 1; background: #ff4b2b; color: white; border: none; border-radius: 8px; cursor: pointer;">Delete Account</button>
+    </div>
+</div>
+
+<div id="editModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); z-index:1000; justify-content:center; align-items:center;">
+    <div class="glass-card" style="max-width: 400px; text-align: center;">
+        <h3>Edit Profile</h3>
+        <input type="text" id="editUsername" placeholder="New Username" class="input-field" style="width:100%; margin: 15px 0; padding: 10px; border-radius: 5px;">
+        <input type="email" id="editEmail" placeholder="New Email" class="input-field" style="width:100%; margin-bottom: 20px; padding: 10px; border-radius: 5px;">
+        <div style="display: flex; gap: 10px;">
+            <button onclick="saveProfile()" class="btn-primary" style="flex:1;">Save</button>
+            <button onclick="toggleEditModal()" class="btn-secondary" style="flex:1;">Cancel</button>
+        </div>
+    </div>
+</div>
+    </div>
+
+    <script src="profile.js"></script>
+</body>
+</html>

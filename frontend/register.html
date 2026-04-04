@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up | Exam Portal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="auth-page">
+    <div class="glass-card auth-card">
+        <h2 style="text-align: center; font-size: 1.8rem; margin-bottom: 25px;">Create Account</h2>
+        
+        <form id="registerForm" onsubmit="event.preventDefault(); handleRegister();">
+            <div class="input-group">
+                <input type="text" id="reg-username" placeholder="Username" required>
+            </div>
+
+            <div class="input-group">
+                <input type="email" id="reg-email" placeholder="Email Address" required>
+            </div>
+            
+            <div class="input-group">
+                <input type="password" id="reg-password" placeholder="Password" required>
+            </div>
+
+            <button type="submit" class="btn-primary btn-block">Sign Up</button>
+        </form>
+        
+        <p style="text-align: center; margin-top: 20px; font-size: 0.9rem; color: rgba(255,255,255,0.7);">
+            Already have an account? <a href="index.html" style="color: #00d2ff; text-decoration: none; font-weight: 600;">Login</a>
+        </p>
+    </div>
+    <script src="register.js"></script>
+</body>
+</html>
