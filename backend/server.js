@@ -11,17 +11,6 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-
-//newly adding 
-
-const path = require('path');
-
-app.use(express.static(path.join(__dirname, '../frontend')));
-
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '../frontend/index.html'));
-});
-
 // MongoDB Connection Setup
 const client = new MongoClient(process.env.MONGO_URI);
 let db;
@@ -230,11 +219,11 @@ app.post('/reset-subject', authenticateToken, async (req, res) => {
     }
 });
 // Server Listen
-//const PORT = process.env.PORT || 8080;
-//app.listen(PORT, () => console.log(` Server Running on Port ${PORT}`));
-
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => console.log(` Server Running on Port ${PORT}`));
+/*
 const PORT = process.env.PORT || 8080;
 
 app.listen(PORT, '0.0.0.0', () => {
   console.log(`Server Running on Port ${PORT}`);
-});
+});*/
