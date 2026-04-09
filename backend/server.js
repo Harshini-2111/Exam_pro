@@ -18,10 +18,10 @@ let db;
 client.connect()
     .then(() => {
         db = client.db("examDB");
-        console.log("✅ Connected to MongoDB");
+        console.log(" Connected to MongoDB");
     })
     .catch(err => {
-        console.error("❌ MongoDB Connection Error:", err);
+        console.error("MongoDB Connection Error:", err);
     });
 
 // Middleware: Verify Token
@@ -131,14 +131,14 @@ app.get('/questions', authenticateToken, async (req, res) => {
     }
 });
 
-// 5. Submit Exam & Update Progress (MODIFIED FOR ROTATION)
+
 app.post('/submit-exam', authenticateToken, async (req, res) => {
     const { subject, level, score } = req.body;
     const username = req.user.username;
     const passThreshold = 60;
 
     try {
-        // Find the user to get current high score
+       
         const user = await db.collection("users").findOne({ username });
         const currentBest = user.subjects[subject][level].score || 0;
 

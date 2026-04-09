@@ -10,10 +10,8 @@ async function seed() {
         const db = client.db("examDB");
         console.log("Connected to database...");
 
-        // Clear old questions
         await db.collection("questions").deleteMany({}); 
 
-        // CRITICAL FIX: Map "A" to "levelA", "B" to "levelB", etc.
         const formattedQuestions = questionsData.map(q => ({
             ...q,
             level: q.level === "A" ? "levelA" : 

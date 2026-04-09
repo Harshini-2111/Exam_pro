@@ -16,4 +16,4 @@ spec:
       - name: online-exam
         image: harshini2105/online-exam-openshift:latest
         ports:
-        - containerPort: 3000
+        - containerPort: 8080
